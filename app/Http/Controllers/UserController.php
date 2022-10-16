@@ -33,6 +33,6 @@ class UserController extends Controller
                 }
             }
         }
-        return response()->json(['error' => 'نام کاربری یا رمز عبور نادرست است']);
+        return response()->json(['error' => 'نام کاربری یا رمز عبور نادرست است'], 400);
     }
 }

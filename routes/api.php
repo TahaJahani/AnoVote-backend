@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::name('login')->get('/access-denied', function () {
+Route::name('login')->any('/access-denied', function () {
     return response()->json(['error' => 'access denied'], 403);
 });
 

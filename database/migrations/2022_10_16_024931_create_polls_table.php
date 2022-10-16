@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->dateTime('access_time');
             $table->dateTime('end_time');
             $table->enum('show_mode', Poll::$SHOW_MODES);
