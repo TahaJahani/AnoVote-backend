@@ -1,0 +1,104 @@
+[
+    {
+        "route": "/auth/login",
+        "type": "post",
+        "response": {
+            "token": "TOKEN",
+            "role": "admin | student",
+            "error": "message"
+        },
+        "request": {
+            "student_number": "98101363",
+            "national_id": "125000000"
+        }
+    },
+    {
+        "route": "/auth/logout",
+        "type": "post"
+    },
+    {
+        "route": "/poll/{slug}",
+        "type": "get",
+        "response": {
+            "title": "title",
+            "description": "description",
+            "is_multi_option": "boolean",
+            "options": [
+                {
+                    "id":  1,
+                    "text": "text"
+                }
+            ],
+            "results": [
+                {
+                    "id": "option id",
+                    "count": 5
+                }
+            ]
+        }
+    },
+    {
+        "route": "/poll/create",
+        "type": "post",
+        "response": {
+            "slug": "slug"
+        },
+        "request": {
+            "title": "title - required",
+            "description": "optional",
+            "is_multi_option": "optional - default: false",
+            "access_time": "2022-10-16",
+            "end_time": "2022-10-17",
+            "show_mode": "show",
+            "options": [
+                "text",
+                "text",
+                "text"
+            ]
+        }
+    },
+    {
+        "route": "/poll/list?page=folan",
+        "type": "get",
+        "response": {
+            "currentPage": "",
+            "next_page_url": "",
+            "data": {
+                "title": "title",
+                "slug": "slug"
+            }
+        }
+    },
+    {
+        "route": "/vote",
+        "type": "post",
+        "request": {
+            "poll_slug": "slug",
+            "options": ["id1", "id2"]
+        }
+    },
+    {
+        "route": "/poll/{slug}/results",
+        "type": "get",
+        "response": [
+            {
+                "id": 3,
+                "text": "option 1",
+                "total_count": 2,
+                "detail": [
+                    {
+                        "year": "98",
+                        "grade": "کارشناسی",
+                        "votes_count": 2
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "text": "option 2",
+                "total_count": 0,
+                "detail": []
+            }
+        ]
+    }
+]
